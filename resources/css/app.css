@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --tab-color: rgb(58, 241, 119);
+    --tab-padding: 10px 20px ;
+    --border: 1px solid var(--tab-color);
+    /* biến có thể ghi đè, lấy theo định nghĩa của người có quan hệ gần nhất với nó */
+}
+
+.trinh-tabs{
+    
+}
+
+.trinh-tabs__nav{
+    display:flex;
+    border-bottom: 1px solid var(--tab-color);
+    }
+
+.trinh-tabs__nav-item {
+    padding: var(--tab-padding);
+}
+
+.trinh-tabs__nav-item.active {
+    border: 1px solid var(--tab-color);
+    border-bottom-color: white;
+    margin-bottom: -1px;
+}
+
+.trinh-tabs__nav-item:hover {
+    border: 1px solid black;
+}
+
+.trinh-tabs__content{
+
+}
+
+.trinh-tabs__pane{
+    display: none;
+    padding: var(--tab-padding);
+}
+.trinh-tabs__pane.active{
+    display: block;
+}
+
+#my-style2{
+    --tab-color: cyan;
+}
+
+/* ----------Accordion------------ */
+.tr-accordions{}
+
+.tr-accordion__item{
+    border: var(--border);
+    border-left: 0px !important;
+    border-right: 0px !important;
+    margin-bottom: -1px;
+    --bg-color : #fff;
+    --color : black;
+    --display : none;
+}
+.tr-accordion__item.active{
+    --bg-color : rgb(245, 242, 96);
+    --color : teal;
+    --display : block;
+
+}
+
+.tr-accordion__item-header{
+    background-color: var(--bg-color);
+    color : var(--color);
+}
+
+.tr-accordion__link{
+
+}
+
+.tr-accordion__item-collapse{
+    display: var(--display);
+    padding: var(--tab-padding);
+
+}
+
+.tr-accordion__body{
+}
+
+/* ----------Carousel------------ */
+.tr-carousel{
+    display: inline-block;
+}
+.tr-carousel__inner{
+ display : flex;
+ position : relative;
+}
+
+.tr-carousel__item{
+    --display :none;
+    position : relative;
+}
+.tr-carousel__item.active{
+    --display :block;
+}
+.tr-carousel__img{
+    display: var(--display);
+}
+/* .tr-carousel__control-link{
+    top: 50%;
+    position : absolute;
+}*/
+.tr-carousel__control.prev{
+    left : 0;
+}
+.tr-carousel__control.next{
+    right : 0;
+}
+
+ /* -----------Dropdown------------ */
+ .tr-dropdown{
+    position: relative;
+    --display : none;
+ }
+ .tr-dropdown:hover .tr-dropdown__menu{
+    --display : block;
+ }
+ .tr-dropdown__btn{
+    @apply bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800;
+
+ }
+ .tr-dropdown__menu{
+    display: var(--display);
+    position: absolute;
+    /* phai cho biet no absolute voi cai gi */
+    /* no lay chan la cap tren gan nhat co khai bao position */
+    /* fix la so voi cai man hinh, absolut so voi cai position cha */
+    @apply py-2 text-sm text-gray-700 dark:text-gray-200;
+}
+.tr-dropdown__item{
+    @apply block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white;
+
+}
+
+.input-simple{
+    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+}
